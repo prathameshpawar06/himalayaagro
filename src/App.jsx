@@ -76,6 +76,45 @@ function App() {
 
   const baseurl = import.meta.env.BASE_URL || '/';
 
+  function VendorsSection() {
+    const vendors = [
+      { name: 'Zepto', logo: 'vendors/zepto.svg' },
+      { name: 'Tata Star', logo: 'vendors/tata-star.svg' },
+      { name: 'Kisan Konnect', logo: 'vendors/kisan-konnect.svg' },
+      { name: 'Swiggy', logo: 'vendors/swiggy.svg' },
+      { name: 'Amazon', logo: 'vendors/amazon.svg' },
+      { name: 'Bigbasket', logo: 'vendors/bigbasket.svg' },
+      { name: 'Reliance', logo: 'vendors/reliance.svg' },
+      { name: 'Vegrow', logo: 'vendors/vegrow.webp' },
+      { name: 'Shtayushi Organic', logo: 'vendors/shtayushi-organic.png' },
+    ];
+
+    return (
+      <section id="vendors" className="vendor-section">
+        <div className="container">
+          <h2>Our Vendor Partners</h2>
+          <p className="section-intro">We collaborate with trusted marketplace and retail partners</p>
+          <div className="vendor-grid">
+            {vendors.map(v => (
+              <div key={v.name} className="vendor-item" title={v.name}>
+                <img
+                  src={`${baseurl}${v.logo}`}
+                  alt={`${v.name} logo`}
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = `${baseurl}vite.svg`;
+                  }}
+                />
+                <span className="vendor-name">{v.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <div className="app">
       {/* Header */}
@@ -252,6 +291,9 @@ function App() {
                   </div>
                 </div>
               </section>
+
+              {/* Vendors Section */}
+              <VendorsSection />
 
               {/* Products Section */}
               <section id="products" className="products">

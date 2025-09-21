@@ -400,6 +400,63 @@ body {
   line-height: 1.5;
 }
 
+/* Vendors Section */
+.vendor-section {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.vendor-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #2d5a27;
+  margin-bottom: 0.75rem;
+}
+
+.vendor-section .section-intro {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.vendor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  align-items: center;
+}
+
+.vendor-item {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vendor-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.vendor-item img {
+  max-width: 120px;
+  max-height: 48px;
+  object-fit: contain;
+  filter: saturate(0.9);
+}
+
+.vendor-name {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
 .service-features li:before {
   content: '';
   display: inline-block;
